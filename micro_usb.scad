@@ -36,11 +36,12 @@ module usbMicro(center = false) {
             [portTopLen/2+portBottomLen/2, -portSideTotal], //3
             [portTopLen/2-portBottomLen/2, -portSideTotal], //4
             [0, - portSide]];
-  translate([-portTopLen/2, portDepth/2, portSideTotal-trans])
-  rotate([90, 0, 0])
-  //translate([-portTopLen/2, portSideTotal/2, 0])
-  linear_extrude(height = portDepth)
-  polygon(points);
+
+    color("silver")
+    translate([-portTopLen/2, portDepth/2, portSideTotal-trans])
+    rotate([90, 0, 0])
+    linear_extrude(height = portDepth)
+    polygon(points);
 }
 
 module usbMicroCutter(cutScale = 1.1) {

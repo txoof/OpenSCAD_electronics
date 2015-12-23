@@ -38,7 +38,7 @@ rows = 2; //[1:5]
 //Pitch
 pitch = 2.54; //[1.25, 1.27, 2, 2.54, 3.5, 3.96]
 
-module singlePin(center = false) {
+module singlePin(center = false, locate = false) {
   pinDimensions = [.67, .67, 14.22];
   nylonDimensions = [2.36, 2.36, 3.3];
   pinAboveNylon = 7.49;
@@ -52,10 +52,14 @@ module singlePin(center = false) {
       cube(pinDimensions, center = true);    
     color("darkgray")
       cube(nylonDimensions, center =true);
+    if (locate) {
+      color("red")
+        cylinder(r = 0.1, h = pinDimensions[2]*5, center = true);
+    }
   }
 }
 
-module headerPins(columns = 3, rows = 2, centerV = false, center = true, pitch = 2.54) {
+module headerPins(columns = 3, rows = 2, centerV = false, center = true, pitch = 2.54, locate = false) {
   transV = centerV == false ? pitch/2 : 0; // vertical center
 
   trans = center == false ? [0, 0, 0] : [-(columns-1)*pitch/2, -(rows-1)*pitch/2, 0];
@@ -66,7 +70,7 @@ module headerPins(columns = 3, rows = 2, centerV = false, center = true, pitch =
     for (i = [0:columns-1]) {
       for (j = [0:rows-1]) {
         translate([pitch*i, pitch*j, 0])
-          singlePin();
+          singlePin(locate = locate);
       }
     }
     translate([0, 0, -pitch/2+transV])
