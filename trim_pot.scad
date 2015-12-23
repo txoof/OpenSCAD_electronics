@@ -5,7 +5,7 @@
 
   A work very much in progress
 */
-trimPotdim = [6.8, 8.1, 7.6]
+trimPotDim = [6.8, 8.1, 7.6];
 
 module trimPot(locate = false, center = false) {
   $fn = 36;
@@ -21,3 +21,4 @@ module trimPot(locate = false, center = false) {
     }
   }
 }
+trimPot(locate = false);
