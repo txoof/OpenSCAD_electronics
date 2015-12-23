@@ -43,4 +43,10 @@ module usbMicro(center = false) {
   polygon(points);
 }
 
-usbMicro();
+module usbMicroCutter(cutScale = 1.1) {
+  scale([cutScale, cutScale])
+    usbMicro();
+}
+
+//usbMicro();
+usbMicroCutter();
