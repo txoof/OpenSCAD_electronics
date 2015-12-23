@@ -4,7 +4,9 @@
   December 23 2015
   GPL V3
 
-  
+  derived from Molex KK 100 break-away header:
+  http://www.molex.com/pdm_docs/sd/022032041_sd.pdf
+
   Usage (default values shown): 
   ```
   use </path/to/libraries/header_pins.scad>
@@ -22,6 +24,9 @@
   Note: 
   * the breakaway connector is a bit of a fudge and does not appear at the same
     Z height for centered/versus non centered; this should be largely irrelevant 
+
+  updates can be found at GitHub:
+  https://github.com/txoof/OpenSCAD_electronics
 
 */
 
@@ -71,5 +76,5 @@ module headerPins(columns = 3, rows = 2, centerV = false, center = true, pitch =
 }
 
 //singlePin();
-headerPins();
+headerPins(columns = columns , rows = rows, pitch = pitch);
 
