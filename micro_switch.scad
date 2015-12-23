@@ -1,33 +1,52 @@
 /*
   Micro switch with roller
 
+  Aaron Ciuffo (txoof)
+  23 December 2015
+
+
 */
-/*[configuration]*/
 $fn=36; //curve refinement
 
 /*[body]*/
+// body X
 bX=20;  
+// body Y
 bY=6.1;
+// body Z
 bZ=10;
-hD=2.5; //hole diameter
+// hole diameter
+hD=2.5; 
 holeFromBottom=1.8; //absolute distance of mounting hole from bottom of switch
 holeFromEdge=4.3; //absolute distance of mounting hole from edge
 
 /*[terminals]*/
+// terminal X dimension
 tX=.6;
+// terminal Y dimension
 tY=3.3;
+// terminal Z dimension
 tZ=4;
+// position from edge
 termFromEdge=1.5;
 
 
 /*[switch arm]*/
+//arm X
 aX=18.5;
+// arm Y
 aY=4;
+// arm Z
 aZ=.3;
-armFromEdge=3; //absolute distance of arm from edge
-rollerOverArm=1; //absolute distance of roller over the arm
-armOverBody=4; //distace of arm over body 
-addRoller=1;
+ //absolute distance of arm from edge
+armFromEdge=3;
+//absolute distance of roller over the arm
+rollerOverArm=1;
+//distance of arm over body
+armOverBody=4;  
+// add a roller
+addRoller=1; //[0:1]
+// roller diameter
 rollerD=4;
 
 /*[Hidden]*/
