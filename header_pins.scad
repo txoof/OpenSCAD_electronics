@@ -38,13 +38,13 @@ rows = 2; //[1:5]
 //Pitch
 pitch = 2.54; //[1.25, 1.27, 2, 2.54, 3.5, 3.96]
 
-pinHeight=11;
+pinHeight=11.25;
 
 pinAboveNylon=3;
 
 module singlePin(center = false, locate = false, v = false, pinHeight=14.22, pinAboveNylon = 7.49) {
   pinDimensions = [.67, .67, pinHeight];
-  nylonDimensions = [2.36, 2.36, 3.3];
+  nylonDimensions = [2.36, 2.36, 2.4];
 
   trans = center == false ? [0, 0, nylonDimensions[2]/2] : [0, 0, 0];
 
