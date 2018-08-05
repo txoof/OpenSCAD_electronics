@@ -34,8 +34,8 @@ translate([13,6.54,1.5]) color("silver") cylinder(h=0.5,d=3.37, $fn=20);
 } 
 
 module step_stick(sinkHeight=5) {
-    headerPins(8, 1, pinAboveNylon=3, pinHeight=11);
-    translate ([0,13,0]) headerPins(8, 1, pinAboveNylon=3, pinHeight=11);
+    translate ([0,0,.8]) headerPins(8, 1, pinAboveNylon=3, pinHeight=11);
+    translate ([0,13,.8]) headerPins(8, 1, pinAboveNylon=3, pinHeight=11);
     translate([-5,-1.2, 3.4]) board(sinkHeight=sinkHeight);
 }
 
