@@ -9,7 +9,7 @@
 
   Usage (default values shown): 
   ```
-  use </path/to/libraries/header_pins.scad>
+  use </path/to/libraries/header_pins_female.scad>
   //full
   headerPinsFemale(columns = 3, rows = 2, centerV = false, center = true, pitch = 2.52);
   //simple
@@ -65,7 +65,7 @@ module singlePinFemale(center = false, locate = false, v = false, pinHeight=14.2
 }
 
 module headerPinsFemale(columns = 3, rows = 2, centerV = false, center = true, 
-                  pitch = 2.54, locate = false, v = false, pinHeight=14.22, pinAboveNylon=7.49) {
+                  pitch = 2.54, locate = false, v = false, pinHeight=pinHeight, pinAboveNylon=pinAboveNylon) {
   transV = centerV == false ? pitch/2 : 0; // vertical center
 
   trans = center == false ? [0, 0, 0] : [-(columns-1)*pitch/2, -(rows-1)*pitch/2, 0];
