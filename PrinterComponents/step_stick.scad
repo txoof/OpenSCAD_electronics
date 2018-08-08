@@ -10,7 +10,7 @@
   step_stick();
 */
 
-use <header_pins.scad>
+use <../headers/header_pins.scad>
 
 sinkHeight=5;
 heightAbovePCBSurface = 8.9;

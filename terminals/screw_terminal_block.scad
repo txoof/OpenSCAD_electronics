@@ -1,6 +1,8 @@
 // Neeraj Verma Aug, 3, 2018
 // GPL V3 (https://www.gnu.org/licenses/gpl.txt)
 
+// http://www.noami.us
+
 // This is a mock of the real component
 // Do not use on your real device.
 /*
@@ -33,7 +35,7 @@ module cutout() {
 module screw_terminal_block(width=width, count=count) {
     for(i=[1:count]) {
         translate([0,width*i-width,0]) difference() {    
-            body(width);
+            color("LimeGreen") body(width);
             cutout();
         }
     }
