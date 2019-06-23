@@ -142,5 +142,5 @@ module headerPins(columns = 3, rows = 2, center = true,
 }
 
 //singlePin();
-headerPins(columns = columns , rows = rows, pitch = pitch, female=false);
+//headerPins(columns = columns , rows = rows, pitch = pitch, female=false);
 
