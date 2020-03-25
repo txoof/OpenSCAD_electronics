@@ -1,5 +1,9 @@
-bZ=10.1;
-bX=20.13;
+/*
+This is the 10T85 microswitch
+*/
+
+bZ=10.6;
+bX=20.2;
 
 $fn=36;
 
@@ -27,7 +31,7 @@ armFromEdge=20;
 //absolute distance of roller over the arm
 rollerOverArm=0;
 //distance of arm over body
-armOverBody=20;  
+armOverBody=21;  
 // add a roller
 addRoller=0; //[0:1]
 // roller diameter
@@ -40,28 +44,35 @@ module body() {
 
         rotate([90,0,0]) {    
             translate([5.25,3.04,-8]) {
-                cylinder(h=10, r=1.25);
+                cylinder(h=10, r=1.5);
             }
         }
         rotate([90,0,0]) {    
             translate([14.75,3.04,-8]) {
-                cylinder(h=10, r=1.25);
+                cylinder(h=10, r=1.5);
             }
         }    
         translate([bX-10,-.1,bZ-0.64]) cube([11,11,2]);
         translate([bX-10,-.1,bZ-0.64]) rotate([0,-45,0]) 
             cube([1,11,2]);
+        translate([bX-3.9,-1,-0.1]) rotate([0,45,0]) cube([4,10,1]);
+        translate([bX-3.2,-1,-0.4]) cube([4,10,1]);
+        translate([3.2, 9, -0.4]) rotate([0,0,180]) cube([4,10,1]);
+        translate([3.85, 9, -0.1]) rotate([0,45,180]) cube([4,10,1]);
+        translate([7.5,-1,-1]) cube([5,10,1.6]);
+        translate([13.2, 9, -0.1]) rotate([0,45,180]) cube([4,10,1]);
+   translate([bX-13.4,-1,-0.1]) rotate([0,45,0]) cube([4,10,1]); 
 
-    }    
+    }   
 }
 
 
 module terminals() {
-  translate([bX/2, termFromEdge, -tZ/2])
+  translate([bX/2+0.4, termFromEdge, -tZ/2-1])
     cube([tX, tY, tZ]);
-  translate([termFromEdge, termFromEdge, -tZ/2])
+  translate([termFromEdge, termFromEdge, -tZ/2-1])
     cube([tX, tY, tZ]);
-  translate([(bX-termFromEdge), termFromEdge, -tZ/2])
+  translate([(bX-termFromEdge)-0.4, termFromEdge, -tZ/2-1])
     cube([tX, tY, tZ]);
 }
 
@@ -78,9 +89,7 @@ module micro_switch() {
   translate([0, 0, hZ])
   union() {
     body();
-    translate([3, 1.2, bZ/2+armOverBody/4])
-      rotate([0, -armAngle, 0])
-      arm();
+    translate([3, 1.2, bZ/2+armOverBody/4]) rotate([0, -armAngle, 0]) arm();
     color("silver")
       terminals();
   }  
